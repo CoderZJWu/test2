@@ -1,0 +1,11 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="  http://www.springframework.org/schema/beans           http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean id="parentAction" abstract="true">
+	</bean>
+	<bean id="orderBillAction" class="com._520it.pss.web.action.OrderBillAction" scope="prototype">
+		<property name="orderBillService" ref="orderBillService"/>
+		<property name="supplierService" ref="supplierService"/>
+	</bean> -->
+	<bean id="articleController" class="com.alensic.src.controller.ArticleController" scope="prototype">
+		<property name="articleService" ref="articleService"/>
+	</bean>
+</beans>

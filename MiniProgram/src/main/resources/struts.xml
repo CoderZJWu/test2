@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- <struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<package name="pssPkg" extends="struts-default" namespace="/">
+		注册拦截器
+		<interceptors>
+			<interceptor name="loginInterceptor"
+				class="com._520it.pss.web.interceptor.LoginInterceptor"></interceptor>
+			<interceptor name="permissionInterceptor"
+				class="com._520it.pss.web.interceptor.PermissionInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+				<interceptor-ref name="loginInterceptor"/> 
+				<interceptor-ref name="permissionInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="error">/WEB-INF/views/commons/error.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="nopermission">/WEB-INF/views/common/nopermission.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings>
+		<action name="login" class="loginAction"> 
+			<interceptor-ref name="paramsPrepareParamsStack"/> 
+			<result name="login">/login.jsp</result> 
+			<result type="redirectAction">main</result> 
+		</action>
+		 <action name="main"> 
+		 	<result>/WEB-INF/views/main.jsp</result> 
+		 </action>
+		<action name="*_*" class="{1}Action" method="{2}">
+			<result name="list">/WEB-INF/views/{1}/list.jsp</result>
+			<result name="input">/WEB-INF/views/{1}/input.jsp</result>
+			<result name="{2}">/WEB-INF/views/{1}/{2}.jsp</result>
+			<result type="redirectAction">{1}</result>
+		</action>
+	</package>
+</struts> -->
+<struts>
+	<package name="xiaochengxuPkg" namespace="/" extends="json-default">
+	    <!--<action name="user"
+	        class="com.fengshu.limanman.winssage.controller.LoginController">
+	        <result name="success">/pages/index.jsp</result>
+	    </action>-->
+	    <action name="*" class="com.alensic.src.controller.ArticleController" method="{1}">
+	    	<result type="json">
+	    		<param name="root">{1}</param>
+	    	</result>
+	    </action>
+	</package>
+</struts>
+

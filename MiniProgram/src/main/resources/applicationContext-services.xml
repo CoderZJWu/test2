@@ -1,0 +1,9 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="  http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean id="permissionService" class="com._520it.pss.service.impl.PermissionServiceImpl">
+		<property name="permissionDAO" ref="permissionDAO"/>
+		<property name="roleDAO" ref="roleDAO"/>
+	</bean> -->
+	<bean id="articleService" class="com.alensic.src.service.impl.ArticleServiceImpl">
+		<property name="articleDAO" ref="articleDAO"/>
+	</bean>
+</beans>
